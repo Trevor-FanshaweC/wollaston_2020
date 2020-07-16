@@ -42,9 +42,10 @@ img { -ms-interpolation-mode: bicubic; }
 body {
 	font-family: 'latoregular', Helvetica, Arial, sans-serif;
 	background-color: #fff;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	font-size: 100%;
+  max-width: 1034px;
 }
 
 a {
@@ -141,8 +142,7 @@ h2, h3 {
 #wollastonLogo {
   display: block;
   max-width: 120px;
-  margin: 0 auto;
-}
+  margin: 0 auto;}
 
 /* PANO section */
 #pano {
@@ -152,8 +152,7 @@ h2, h3 {
   background-image: url(../images/panoramic_bg_3.jpg);
   background-repeat: no-repeat;
   background-position:center;
-  padding-top: 15px;
-}
+  padding-top: 15px;}
 
 #infoFrost {
   background: rgba(255,255,255,0.8);
@@ -161,16 +160,14 @@ h2, h3 {
   /*took measurement at desktop size no bigger than this*/
   height: 270px;
   max-width: 970px;
-  margin: 0 auto;
-}
+  margin: 0 auto;}
 
 #infoFrost h2 { font-size: 1.125em; margin-bottom: 15px; }
 
 #infoFrost h3 {
   font-size: 0.875em;
   letter-spacing: 0.25px;
-  line-height: 18px;
-}
+  line-height: 18px;}
 
 #infoFrost p {
   color: #090909;
@@ -196,9 +193,82 @@ h2, h3 {
 }
 
 #bookNow:hover { background-color: #215445; }
-
 /* end PANO section */
 
+/* services / extras */
+#serviceCon { margin-bottom: 10px; }
+
+.services {
+	margin-bottom: 20px;
+	padding-top: 1px;
+	/*running into issue with collapsing margin, add a pixel of padding and boom you can use margin-top below*/
+}
+
+.services h2 {
+	font-size: 1.5em; /*24/16*/
+	margin-bottom: 5px;
+	margin-top: 15px;
+}
+
+.services h3 {
+	font-size: 1em; /*18/16*/
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.services p {
+	color: #333;
+	font-size: .875em; /*14/16*/
+	line-height: 22px;
+	text-align: justify;
+}
+
+.icon {
+	float: left;
+	max-width: 70px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-top: 0;
+}
+
+/*Extras Area*/
+#extraCon { margin-bottom: 60px; }
+
+.extrasImg {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.extras h2 {
+	font-size: 1.25em; /*20/16*/
+	line-height: 0;
+	margin-bottom: 30px;
+}
+
+.extras p {
+	color: #333;
+	font-size: .875em; /*14/16*/
+	line-height: 22px;
+}
+
+/*Footer*/
+
+#footerCon {
+	background-color: #8fa771;
+	height: 70px;
+}
+
+#backBut {
+	text-decoration: none;
+	color: #fff;
+	line-height: 70px;
+	font-size: .75em;
+}
+
+#backBut:hover { color: #333; }
+
+#footerNav { display: none; }
+/* end services / extras */
 
 /* media queries go here */
 /* phone at a slightly larger size - 401px */
@@ -226,20 +296,13 @@ h2, h3 {
 }
 
 @media screen and (min-width: 38.75em) {
-  #infoFrost h2 {
-  	font-size: 2em;
-  }
+  #infoFrost h2 { font-size: 2em; }
 
-  #infoFrost h3 {
-  	font-size: 1.25em;
-  	letter-spacing: .25px;
-  }
+  #infoFrost h3 { font-size: 1.25em; letter-spacing: .25px; }
 
-  #infoFrost p {
-  	font-size: .875em;
-  	width: 60%;
-  }
+  #infoFrost p { font-size: .875em; width: 60%; }
 }
+
 
 /* 640 px */
 @media screen and (min-width: 40em) {
@@ -248,6 +311,57 @@ h2, h3 {
   	background-position:center;
   	background-image: url(../images/panoramic_bg_2.jpg);
   }
+
+  #serviceCon { display: flex; }
+
+  .services { margin-right: 20px; }
+  .services:last-child { margin-right: 0px; }
+
+  .services h2 {
+  	font-size: .925em;
+  	margin-top: 10px;
+  	margin-bottom: 5px;
+  	line-height: 14px;
+  }
+
+  .services h3 {
+  	font-size: .625em; /*18/16*/
+  	margin-top: 0;
+  	margin-bottom: 20px;
+  }
+
+  .services p {
+  	color: #333;
+  	font-size: .875em; /*14/16*/
+  	line-height: 22px;
+  	text-align: left;
+  }
+
+  .icon { max-width: 50px; margin-right: 8px; }
+
+  #extraCon { display: flex; }
+
+  .extras:last-child { margin-left: 40px; }
+
+  #backBut { display: none; }
+
+  #footerNav { display: block; }
+
+  #footerCon ul {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  	font-size: .875em;
+  }
+
+  #footerCon ul li { display: inline; margin-right: 20px; }
+  #footerCon ul li a { color: #fff; line-height: 70px; }
+
+  #footerCon ul li a:hover { color: #333; }
+}
+
+@media screen and (min-width: 50em) { /*800px*/
+	#infoFrost { background: url('../images/golf_club.png') right no-repeat rgba(255,255,255, 0.8); }
 }
 
 /* 990px */
@@ -309,10 +423,33 @@ h2, h3 {
 
   #wollastonLogo { max-width: 160px; }
 
+  .icon { max-width: 15%; }
+
   /* handle the pano container */
   #pano {
   	background-repeat: no-repeat;
   	background-position:center;
   	background-image: url(../images/panoramic_bg_1.jpg);
+  }
+
+  .services p { font-size: 0.9375em; width: auto; }
+
+  .services h2 { font-size: 1.25em; /*24/16*/ }
+
+  .services h3 { font-size: .875em; /*18/16*/ }
+
+  .extrasImg {
+  	margin-right: 20px;
+  	max-width: 280px;
+  	float:left;
+  }
+
+  .extras h2 { margin-top: 30px;	margin-bottom: 30px; }
+
+  .extras p {
+  	color: #333;
+  	font-size: .875em; /*14/16*/
+  	line-height: 22px;
+  	width: auto;
   }
 }
